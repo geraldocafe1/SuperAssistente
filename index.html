@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGame - Os melhores consoles do mercado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .console-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header/Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-gamepad text-2xl text-blue-500"></i>
+                <a href="#" class="text-2xl font-bold">Next<span class="text-blue-500">Game</span></a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#products" class="hover:text-blue-400 transition">Produtos</a>
+                <a href="#features" class="hover:text-blue-400 transition">Destaques</a>
+                <a href="#about" class="hover:text-blue-400 transition">Sobre</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contato</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fas fa-user"></i></a>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-gray-800 py-2 px-4" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
+            <a href="#products" class="block py-2 hover:text-blue-400">Produtos</a>
+            <a href="#features" class="block py-2 hover:text-blue-400">Destaques</a>
+            <a href="#about" class="block py-2 hover:text-blue-400">Sobre</a>
+            <a href="#contact" class="block py-2 hover:text-blue-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-bounce-slow">A Nova Geração de Consoles</h1>
+            <p class="text-xl mb-8">Descubra os melhores consoles de videogame com os preços mais competitivos do mercado.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Comprar Agora
+                </a>
+                <a href="#features" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Saiba Mais
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="bg-white py-12 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Categorias</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="category-card bg-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Consoles Domésticos</h3>
+                    <p class="text-gray-600 text-sm">PlayStation, Xbox, Nintendo Switch</p>
+                </div>
+                
+                <div class="category-card bg-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="bg-red-100 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-laptop text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Handhelds</h3>
+                    <p class="text-gray-600 text-sm">Steam Deck, Nintendo Switch Lite</p>
+                </div>
+                
+                <div class="category-card bg-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="bg-yellow-100 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-vr-cardboard text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Realidade Virtual</h3>
+                    <p class="text-gray-600 text-sm">Oculus, PlayStation VR</p>
+                </div>
+                
+                <div class="category-card bg-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="bg-green-100 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-gamepad text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Acessórios</h3>
+                    <p class="text-gray-600 text-sm">Controles, Headsets, Carregadores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-gray-100 px-4">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Produtos em Destaque</h2>
+                <div class="flex space-x-2">
+                    <button class="featured-prev bg-gray-200 hover:bg-gray-300 p-2 rounded-full transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="featured-next bg-gray-200 hover:bg-gray-300 p-2 rounded-full transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="featured-carousel overflow-hidden relative">
+                <div class="flex transition-transform duration-300" id="featured-slider">
+                    <!-- Product 1 -->
+                    <div class="console-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] xl:min-w-[25%] px-4 transition duration-500">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md pb-6">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                                     alt="PlayStation 5" class="w-full h-64 object-cover">
+                                <span class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">-10%</span>
+                            </div>
+                            <div class="p-4">
+                                <span class="text-sm text-gray-500">PlayStation</span>
+                                <h3 class="text-xl font-semibold mb-2">PlayStation 5</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">(246)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-400 line-through text-sm">R$ 4.899</span>
+                                        <h4 class="text-xl font-bold text-gray-900">R$ 4.409</h4>
+                                    </div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="console-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] xl:min-w-[25%] px-4 transition duration-500">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md pb-6">
+                            <img src="https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                                 alt="Xbox Series X" class="w-full h-64 object-cover">
+                            <div class="p-4">
+                                <span class="text-sm text-gray-500">Xbox</span>
+                                <h3 class="text-xl font-semibold mb-2">Xbox Series X</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">(187)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">R$ 4.199</h4>
+                                    </div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="console-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] xl:min-w-[25%] px-4 transition duration-500">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md pb-6">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Nintendo Switch" class="w-full h-64 object-cover">
+                            <div class="p-4">
+                                <span class="text-sm text-gray-500">Nintendo</span>
+                                <h3 class="text-xl font-semibold mb-2">Nintendo Switch OLED</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">(312)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-400 line-through text-sm">R$ 2.799</span>
+                                        <h4 class="text-xl font-bold text-gray-900">R$ 2.649</h4>
+                                    </div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="console-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] xl:min-w-[25%] px-4 transition duration-500">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md pb-6">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1666810882997-d14a1a8a1f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                                     alt="Steam Deck" class="w-full h-64 object-cover">
+                                <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">Novo</span>
+                            </div>
+                            <div class="p-4">
+                                <span class="text-sm text-gray-500">Valve</span>
+                                <h3 class="text-xl font-semibold mb-2">Steam Deck 512GB</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">(198)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">R$ 4.899</h4>
+                                    </div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="console-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] xl:min-w-[25%] px-4 transition duration-500">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md pb-6">
+                            <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="PlayStation 4" class="w-full h-64 object-cover">
+                            <div class="p-4">
+                                <span class="text-sm text-gray-500">PlayStation</span>
+                                <h3 class="text-xl font-semibold mb-2">PlayStation 4 Pro</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">(421)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-400 line-through text-sm">R$ 3.199</span>
+                                        <h4 class="text-xl font-bold text-gray-900">R$ 2.799</h4>
+                                    </div>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Por que comprar na NextGame?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-6 bg-gray-50 rounded-lg hover:shadow-md transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frete Grátis</h3>
+                    <p class="text-gray-600">Entregamos em todo Brasil com frete grátis em compras acima de R$ 1.500,00.</p>
+                </div>
+                
+                <div class="feature-card p-6 bg-gray-50 rounded-lg hover:shadow-md transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Garantia Estendida</h3>
+                    <p class="text-gray-600">Todos nossos produtos têm garantia de 1 ano nacional + 3 meses de cortesia.</p>
+                </div>
+                
+                <div class="feature-card p-6 bg-gray-50 rounded-lg hover:shadow-md transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Trocas Fáceis</h3>
+                    <p class="text-gray-600">Caso não fique satisfeito, aceitamos trocas ou devoluções em até 7 dias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="py-16 bg-gray-100 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Novidades</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="new-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col md:flex-row">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1675352070323-b2bd9e9b31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="PlayStation VR2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                        <span class="text-sm text-blue-600">LANÇAMENTO</span>
+                        <h3 class="text-2xl font-bold mb-3">PlayStation VR2</h3>
+                        <p class="text-gray-600 mb-4">A nova geração de realidade virtual da Sony com resolução 4K HDR e rastreamento ocular.</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-bold text-gray-900">R$ 4.699</h4>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="new-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col md:flex-row">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                             alt="Xbox Series S" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                        <span class="text-sm text-green-600">ESGOTANDO</span>
+                        <h3 class="text-2xl font-bold mb-3">Xbox Series S</h3>
+                        <p class="text-gray-600 mb-4">O console mais compacto e acessível da nova geração com desempenho incrível.</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-bold text-gray-900">R$ 2.799</h4>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Sobre Nós" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre a NextGame</h2>
+                    <p class="text-gray-600 mb-4">Fundada em 2015, a NextGame se tornou referência no mercado de videogames, oferecendo os melhores consoles e acessórios com preços competitivos e atendimento excepcional.</p>
+                    <p class="text-gray-600 mb-6">Nossa missão é proporcionar a melhor experiência de compra para gamers de todas as idades, com produtos originais e garantia de qualidade.</p>
+                    <div class="flex space-x-4">
+                        <div class="bg-blue-100 p-4 rounded-lg text-center">
+                            <h4 class="text-2xl font-bold text-blue-600">8+</h4>
+                            <p class="text-gray-600">Anos no mercado</p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg text-center">
+                            <h4 class="text-2xl font-bold text-green-600">50k+</h4>
+                            <p class="text-gray-600">Clientes satisfeitos</p>
+                        </div>
+                        <div class="bg-purple-100 p-4 rounded-lg text-center">
+                            <h4 class="text-2xl font-bold text-purple-600">1.2k+</h4>
+                            <p class="text-gray-600">Produtos disponíveis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-900 text-white px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Assine Nossa Newsletter</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Receba ofertas exclusivas e seja o primeiro a saber sobre novos lançamentos e promoções.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">Assinar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white pt-16 pb-8 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-gamepad text-2xl text-blue-500"></i>
+                        <a href="#" class="text-2xl font-bold">Next<span class="text-blue-500">Game</span></a>
+                    </div>
+                    <p class="text-gray-400 mb-4">A melhor loja de videogames do Brasil com os melhores preços e atendimento.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Programa de Afiliados</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Atendimento</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Rastrear Pedido</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Devoluções</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Garantia</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Prazos de Entrega</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1 text-blue-400"></i>
+                            <span class="text-gray-400">Av. Paulista, 1000 - São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-phone-alt mt-1 text-blue-400"></i>
+                            <span class="text-gray-400">(11) 9999-9999</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-envelope mt-1 text-blue-400"></i>
+                            <span class="text-gray-400">contato@nextgame.com.br</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-clock mt-1 text-blue-400"></i>
+                            <span class="text-gray-400">Seg-Sex: 9h-18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 NextGame. Todos os direitos reservados.</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Pix" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Boleto" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Featured Products Carousel
+        const featuredSlider = document.getElementById('featured-slider');
+        const prevButton = document.querySelector('.featured-prev');
+        const nextButton = document.querySelector('.featured-next');
+        
+        let currentSlide = 0;
+        const cardWidth = document.querySelector('.console-card').offsetWidth;
+        const slideCount = document.querySelectorAll('.console-card').length;
+        
+        function updateSlider() {
+            featuredSlider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        }
+        
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < slideCount - 1) {
+                currentSlide++;
+                updateSlider();
+            }
+        });
+        
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
